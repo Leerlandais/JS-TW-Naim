@@ -64,6 +64,11 @@ switch (ourPage) {
     case "exe-7-pass" :
         mainHeading.textContent = "Mot De Passe";
         subHeading.textContent  = "Vérifier la Sécurité d'un Mot de Passe";
+        nextLink.setAttribute("href", "exe-12-calculator.html");
+        break;
+    case "exe-12-calculator" :
+        mainHeading.textContent = "Calculatrice";
+        subHeading.textContent  = "Fait avec le minimum code possible";
         nextLink.setAttribute("href", "exe-0-jokes.html");
         break;
 // put more cases here
