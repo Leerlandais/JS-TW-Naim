@@ -21,7 +21,7 @@ console.log('this ; ' + ourPage); // première con.log - je n'ai plus besoin de 
 
 switch (ourPage) {
     case 'index':
-        mainHeading.textContent = "You are home";
+        mainHeading.textContent = "Bienvenue";
         subHeading.textContent  = "Pas grand chose à voir ici, cliquez ci-dessous pour continuer"
         nextLink.setAttribute("href", "exe-0-jokes.html");
 
@@ -34,7 +34,8 @@ switch (ourPage) {
     case "exe-1-heure" :
         mainHeading.textContent = "Horloge";
         subHeading.textContent  = "Une horloge (indiquant également les secondes, pour que vous puissiez voir qu'elle fonctionne sans attendre)";
-        nextLink.setAttribute("href", "exe-2-consoles.html");
+        // nextLink.setAttribute("href", "exe-2-consoles.html");
+        nextLink.setAttribute("href", "exe-4-carousel.html");
         break;
     case "exe-2-consoles" :
         mainHeading.textContent = "Consoles";
@@ -49,7 +50,8 @@ switch (ourPage) {
     case "exe-4-carousel" :
         mainHeading.textContent = "Carousel"
         subHeading.textContent  = "Carrousel d’images fait à la main";
-        nextLink.setAttribute("href", "exe-5-colours.html");
+        // nextLink.setAttribute("href", "exe-5-colours.html");
+        nextLink.setAttribute("href", "exe-7-pass.html");
         break;
     case "exe-5-colours" :
         mainHeading.textContent = "Couleurs";

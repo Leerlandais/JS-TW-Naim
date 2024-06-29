@@ -6,7 +6,7 @@ const passForm = document.getElementById("passForm"),
       inpNum     = document.getElementById("inpNum"),
       inpSym     = document.getElementById("inpSym"),
       buttonClass = "w-full py-2 px-4 rounded-md text-sm font-medium text-white bg-gray-600 hover:bg-red-600",
-      message    = document.querySelector(".h3");
+      message    = document.getElementById('message');
 let elem;
 passForm.addEventListener("submit", function (form) {
    form.preventDefault();
