@@ -12,16 +12,22 @@
 <div id="globalDiv">
     <h1 id="mainHeading"></h1>
     <h2 id="subHeading"></h2>
-    <div class="flex justify-center content-center bg-white mt-20 h-[25%]">
-        <div id="jokeWindown"></div>
-        <button id="jokeButton">Cliquer Ici</button>
 
-    </div>
+    <section class="grid place-items-center bg-transparent p-16 mt-24">
+        <div class="flex items-center border-l-8 border-emerald-500 bg-emerald-50 p-4 text-emerald-900 shadow-lg mb-8">
+            <div class="min-w-0">
+                <h3 id="jokeWindow" class="overflow-hidden text-ellipsis"></h3>
+            </div>
+        </div>
+        <div class="relative flex flex-col space-y-10 justify-center overflow-hidden bg-transparent py-6 sm:py-12">
+            <button id="jokeButton" class="bg-gradient-to-b w-max mx-auto text-blue-500 font-semibold from-slate-50 to-blue-100 px-10 py-3 rounded-2xl shadow-green-800 shadow-xl border-b-4 hover border-b border-blue-200 hover:shadow-sm transition-all duration-500">Cliquer Ici</button>
+        </div>
+    </section>
 
 
 
-    <div id="nextPage"></div>
-    <footer>
+    <button id="nextPage" class="bg-gradient-to-b w-max mx-auto text-blue-500 font-semibold from-slate-50 to-blue-100 px-10 py-3 rounded-2xl shadow-blue-600 shadow-xl border-b-4 hover border-b border-blue-200 hover:shadow-sm transition-all duration-500"></button>
+    <footer class="mt-24">
         &copy; <a href="https://leerlandais.com" target="_blank">Lee Brennan</a>
     </footer>
 </div>

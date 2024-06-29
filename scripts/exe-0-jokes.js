@@ -48,7 +48,7 @@ let jokeArray= [
     "Pourquoi les cigognes n'aiment-elles pas les bébés ? Parce qu'elles préfèrent voler seules.",
     "Quel est le comble pour un pilote ? De ne pas être dans les airs."
 ];
-const jokeWindow = document.getElementById("jokeWindown"),
+const jokeWindow = document.getElementById("jokeWindow"),
       jokeButton = document.getElementById("jokeButton");
 
 jokeButton.addEventListener('click', getRandomJoke)
@@ -57,3 +57,4 @@ function getRandomJoke () {
     let jokePos = Math.floor(Math.random()*jokeArray.length) + 1;
     jokeWindow.textContent = jokeArray[jokePos];
 }
+getRandomJoke();
