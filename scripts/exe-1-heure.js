@@ -1,11 +1,11 @@
 
 const containerClock = document.getElementById('containerClock');
 
-function addClocktoElement(myClock) {
+function addClockToElement(myClock) {
     let clock = document.createElement('h2');
     clock.className = "bg-gradient-to-r from-red-600 via-green-800 to-indigo-600 inline-block text-transparent bg-clip-text text-5xl"
 
-    setInterval(updateTime, 1000);
+    setInterval(updateTime, 100);
 
     function updateTime() {
         let myTime = Date.now();
@@ -31,4 +31,4 @@ function addClocktoElement(myClock) {
 
 
 
-addClocktoElement(containerClock);
+addClockToElement(containerClock);
