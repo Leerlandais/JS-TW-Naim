@@ -5,6 +5,7 @@ const   toDoMessage = document.getElementById("toDoMessage"),
 
 
 newToDoItem.value = ""; // vider le contenu d'input après soft refresh
+newToDoItem.focus(); // pour avoir le cursor déjà dans l'input
 
 
 // empeche l'envoi du Form et appel fonction pour ajouter item
