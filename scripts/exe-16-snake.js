@@ -17,6 +17,7 @@ document.addEventListener('keydown', function(btnPressed) {
     if (btnPressed.code === 'ArrowUp' || btnPressed.code === 'ArrowDown' || btnPressed.code === 'Numpad8' || btnPressed.code === 'Numpad2') {
         btnPressed.preventDefault();
     }
+    // sinon, écoute les autres touches btn // Note to self : add optional choice, it will shorten the code
     if (btnPressed.code === 'ArrowLeft' || btnPressed.code === 'Numpad4' || btnPressed.code === 'KeyA') {
         console.log("left");
         } else if (btnPressed.code === 'ArrowRight' || btnPressed.code === 'Numpad6' || btnPressed.code === 'KeyD') {
@@ -33,3 +34,13 @@ document.addEventListener('keydown', function(btnPressed) {
  
         
 
+/*
+TO DO :
+Create snake. Length 4. Try to do it OO
+Tie movement to buttons
+Add food and tie growth to food
+Add food replacement
+Add collision event
+Add highscore
+Add button selection (separate js file) and tie it in here
+*/
