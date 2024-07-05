@@ -11,9 +11,8 @@ const canvasWidth = canvas.width,    // afin de le rendre plus facile de positio
 // très facile de trouver le centre avec canvas...je me rappel de les difficultés pour faire le même avec snake_v1
 let snakeX = canvasWidth/ 2,
     snakeY = canvasHeight / 2;
-
+let snakeDirection = "LEFT";
 let snakeBodyArray = []; // un tableaux pour contenir le Snake
-
 // et un boucle pour le definir
 for (let i = 0; i < snakeBaseLength; i++) {
     // essai de faire avec un objet - avant, j'ai calculer à chaque moment...ceci est plus éfficace (j'espère)
@@ -36,24 +35,57 @@ createSnake();
 
 // première fois que je l'essai mais pourquoi pas écouter le DOM entière
 document.addEventListener('keydown', function(btnPressed) {
+
     // Si Up/Down, ne bouge pas l'écran
     if (btnPressed.code === 'ArrowUp' || btnPressed.code === 'ArrowDown' || btnPressed.code === 'Numpad8' || btnPressed.code === 'Numpad2' || btnPressed.code === "KeyW" || btnPressed === 'KeyS') {
         // sans doute mieux dans un tableaux?? dontMoveArray.includes(btnPress.code)?
         btnPressed.preventDefault();
     }
     // sinon, écoute les autres touches btn // Note to self : add optional choice, it will shorten the code
-    if (btnPressed.code === 'ArrowLeft' || btnPressed.code === 'Numpad4' || btnPressed.code === 'KeyA') { 
+    if (btnPressed.code === 'ArrowLeft' || btnPressed.code === 'Numpad4' || btnPressed.code === 'KeyA') {
+        snakeDirection = "LEFT";
         // même que avant, mettre les boutons pour chaque diréction dans des tableaux... leftMoveButtons = ["ArrowRight","Num6", etc]
         } else if (btnPressed.code === 'ArrowRight' || btnPressed.code === 'Numpad6' || btnPressed.code === 'KeyD') {
+        snakeDirection = "RIGHT";
      } else if (btnPressed.code === 'ArrowUp' || btnPressed.code === 'Numpad8' || btnPressed.code === 'KeyW') {
+        snakeDirection = "UP";
         } else if (btnPressed.code === 'ArrowDown' || btnPressed.code === 'Numpad2' || btnPressed.code === 'KeyS') {
+        snakeDirection = "DOWN";
     }
+    updateSnake(snakeDirection);
 });
+
+function updateSnake() {
+
+    // Copie position de la tête
+    let head = { ...snakeBodyArray[0] };
+    // change direction
+    if (snakeDirection === 'UP') {
+        head.y -= snakeSegment;
+    } else if (snakeDirection === 'DOWN') {
+        head.y += snakeSegment;
+    } else if (snakeDirection === 'LEFT') {
+        head.x -= snakeSegment;
+    } else if (snakeDirection === 'RIGHT') {
+        head.x += snakeSegment;
+    }
+    // Je me rappel de la galère j'ai eu pour faire ceci la première fois mais je ne connaissais pas pop/unshift etc à ce moment
+    snakeBodyArray.unshift(head);
+    snakeBodyArray.pop();
+
+    createSnake();
+}
+// MaJ du Snake 10/s
+
+setInterval(() => {
+updateSnake(snakeDirection);
+}, 100);
+
+
 
 /*
 TO DO :
-Create snake. Length 4. Try to do it OO
-Tie movement to buttons
+
 Add food and tie growth to food
 Add food replacement
 Add collision event
