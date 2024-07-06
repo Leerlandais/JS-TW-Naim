@@ -77,12 +77,12 @@ function updateSnake() {
         head.x += snakeSegment;
     }
     if (head.x < 0 || head.x >= canvasWidth || head.y < 0 || head.y >= canvasHeight) {
-        alert("Game Over! T'as touché le mur");
+        alert("Game Over! T'as touché le mur. Ton score est :" +snakeBodyArray.length);
         window.location.reload();
     }
     for (let i = 1; i < snakeBodyArray.length; i++) {
         if (head.x === snakeBodyArray[i].x && head.y === snakeBodyArray[i].y) {
-            alert("Game Over! Tu t'as bouffé toi-même");
+            alert("Game Over! Tu t'as bouffé toi-même. Ton score est :" +snakeBodyArray.length);
             window.location.reload();
         }
     }
