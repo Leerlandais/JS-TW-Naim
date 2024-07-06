@@ -6,7 +6,7 @@ const canvas = document.getElementById("snake"),
 const canvasWidth = canvas.width,    // afin de le rendre plus facile de positioner le Snake
       canvasHeight = canvas.height,
       snakeSegment = 20,       // et de lui donner une taille
-      snakeBaseLength = 5;  // et un longeur
+      snakeBaseLength = 15;  // et un longeur
 
 // très facile de trouver le centre avec canvas...je me rappel de les difficultés pour faire le même avec snake_v1
 let snakeX = canvasWidth/ 2,
@@ -69,6 +69,20 @@ function updateSnake() {
     } else if (snakeDirection === 'RIGHT') {
         head.x += snakeSegment;
     }
+
+    // verifier si tête touche les bordures du canvas
+    if (head.x < 0 || head.x >= canvasWidth || head.y < 0 || head.y >= canvasHeight) {
+        alert("Game Over! T'as touché le mur");
+        window.location.reload();
+    }
+    // et aussi pour auto-collision
+    for (let i = 1; i < snakeBodyArray.length; i++) {
+        if (head.x === snakeBodyArray[i].x && head.y === snakeBodyArray[i].y) {
+            alert("Game Over! Tu t'as bouffé toi-même");
+            window.location.reload();
+        }
+    }
+
     // Je me rappel de la galère j'ai eu pour faire ceci la première fois mais je ne connaissais pas pop/unshift etc à ce moment
     snakeBodyArray.unshift(head);
     snakeBodyArray.pop();
@@ -88,7 +102,7 @@ TO DO :
 
 Add food and tie growth to food
 Add food replacement
-Add collision event
+
 Add highscore
 Add button selection (separate js file) and tie it in here
 */
