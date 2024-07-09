@@ -171,10 +171,6 @@ document.addEventListener('keydown', function(btnPressed) {
         btnPressed.preventDefault();
     }
     if (btnPressed.repeat) return;
-    if (btnPressed.code === "ArrowUp" || btnPressed.code === "ArrowDown") {
-        btnPressed.preventDefault();
-    }
-    if (btnPressed.repeat) return;
 let leftButtons = ["ArrowLeft", "Numpad4","KeyA"],
     rightButtons = ["ArrowRight", "Numpad6", "KeyD"],
     upButtons = ["ArrowUp", "Numpad8", "KeyW"],
